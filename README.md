@@ -31,20 +31,9 @@ This repository provides a copy of Brian Coventry's silent tools, these tools ar
 
 I have split the single conda env that this repo used to use (dl_binder_design.yml; still provided in <base_dir>/include if anyone is interested) into two smaller and easier to install environments. The old environment required PyTorch, JAX, TensorFlow, and PyRosetta packages to all be compatible with one another, which is difficult. The new environments should be easier to install and I have also added import tests so that it is easier and faster to check that the installation has been successful.
 
-Both of these environments require PyRosetta which requires a license that is free to academics and available [here](https://graylab.jhu.edu/pyrosetta/downloads/documentation/PyRosetta_Install_Tutorial.pdf). This license will give you access to the USERNAME and PASSWORD referenced below. If you do not provide this USERNAME and PASSWORD, you will get a CondaHTTPError when you attempt to run the installation.
-
 The steps to installing the environments are as follows:
 
 - Ensure that you have the Anaconda or Miniconda package manager
-- Ensure that you have the PyRosetta channel included in your `~/.condarc`
-- Your `~/.condarc` should look something like this:
-```
-channels: 
-- https://USERNAME:PASSWORD@conda.graylab.jhu.edu
-- conda-forge
-- defaults
-```
-- More information about conda installing PyRosetta may be found here: https://www.pyrosetta.org/downloads
 - Clone this repo
 
 ## Install ProteinMPNN-FastRelax Environment <a name="setup1.1"></a>

@@ -4,9 +4,11 @@ channels:
   - nvidia
   - conda-forge
   - defaults
+  - https://conda.rosettacommons.org
 dependencies:
   - python=3.11
   - pytorch=2.0
   - biopython
   - ml-collections
   - pyrosetta
+  - numpy<2.0
