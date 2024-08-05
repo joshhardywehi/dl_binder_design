@@ -4,6 +4,8 @@ channels:
   - nvidia
   - conda-forge
   - defaults
+  - https://conda.rosettacommons.org
+
 dependencies:
   - python=3.11
   - biopython
