@@ -1,7 +1,5 @@
 name: proteinmpnn_binder_design
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
   - https://conda.rosettacommons.org
 
@@ -12,5 +10,3 @@ dependencies:
   - ml-collections
   - pyrosetta
   - numpy<2.0
-  - nomkl
-  - openblas
