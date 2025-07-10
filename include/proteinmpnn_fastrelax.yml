@@ -12,4 +12,3 @@ dependencies:
   - ml-collections
   - pyrosetta
   - numpy<2.0
-  - mkl=2024.0
