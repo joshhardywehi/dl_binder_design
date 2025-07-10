@@ -443,11 +443,11 @@ class StructManager():
 
     def dump_pose(self, pose, tag, sequence=None, score=None):
         '''
-        Dump this pose and create JSONL metadata if sequence/score provided
+        Dump this pose and create JSON metadata if sequence/score provided
         '''
-        jsonl_data = None
+        json_data = None
         if sequence is not None and score is not None:
-            jsonl_data = {
+            json_data = {
                 "design": tag,
                 "sequence": sequence,
                 "score": f"{score:.2f}"
@@ -460,10 +460,10 @@ class StructManager():
             pdbfile = os.path.join(self.outpdbdir, tag + '.pdb')
             pose.dump_pdb(pdbfile)
             
-            if jsonl_data:  # Write JSONL to same directory as PDBs
-                jsonl_path = os.path.join(self.outpdbdir, f"mpnn_{tag}.jsonl")
-                with open(jsonl_path, 'w') as f:
-                    f.write(json.dumps(jsonl_data) + '\n')
+            if json_data:  # Write JSON to same directory as PDBs
+                json_path = os.path.join(self.outpdbdir, f"mpnn_{tag}.json")
+                with open(json_path, 'w') as f:
+                    f.write(json.dumps(json_data) + '\n')
 
         if self.silent:
             struct = self.sfd_out.create_SilentStructOP()
@@ -471,11 +471,11 @@ class StructManager():
             self.sfd_out.add_structure(struct)
             self.sfd_out.write_silent_struct(struct, self.outsilent)
             
-            if jsonl_data:  # Write JSONL to silent file directory
+            if json_data:  # Write JSON to silent file directory
                 silent_dir = os.path.dirname(self.outsilent)
-                jsonl_path = os.path.join(silent_dir, f"mpnn_{tag}.jsonl")
-                with open(jsonl_path, 'w') as f:
-                    f.write(json.dumps(jsonl_data) + '\n')
+                json_path = os.path.join(silent_dir, f"mpnn_{tag}.json")
+                with open(json_path, 'w') as f:
+                    f.write(json.dumps(json_data) + '\n')
 
     def load_pose(self, tag):
         '''
