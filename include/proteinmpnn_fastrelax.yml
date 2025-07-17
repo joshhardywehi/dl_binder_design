@@ -10,3 +10,5 @@ dependencies:
   - ml-collections
   - pyrosetta
   - numpy<2.0
+  - nomkl
+  - openblas
